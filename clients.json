@@ -1,0 +1,55 @@
+[
+  {
+    "name": "Nubo",
+    "devices": [
+      {
+        "name": "FW01",
+        "type": "Firewall",
+        "ip": "192.168.1.1"
+      },
+      {
+        "name": "SW01",
+        "type": "Switch",
+        "ip": "192.168.1.2"
+      }
+    ],
+    "documents": [
+      {
+        "title": "VPN Setup",
+        "content": "Use the firewall portal and follow the approved VPN procedure."
+      }
+    ]
+  },
+  {
+    "name": "Cleverspin",
+    "devices": [
+      {
+        "name": "FW02",
+        "type": "Firewall",
+        "ip": "10.0.0.1"
+      }
+    ],
+    "documents": [
+      {
+        "title": "Firewall Access",
+        "content": "Cleverspin firewall access instructions go here."
+      }
+    ]
+  },
+  {
+    "name": "Cleverbun",
+    "devices": [
+      {
+        "name": "FW03",
+        "type": "Firewall",
+        "ip": "10.0.0.100"
+      }
+    ],
+    "documents": [
+      {
+        "title": "Firewall Access",
+        "content": "Clevebun firewall access instructions go here."
+      }
+    ]
+  }
+]
