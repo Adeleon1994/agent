@@ -1,0 +1,52 @@
+[
+    {
+        "id": 1,
+        "category": "Windows",
+        "scenario": "A Windows Server C: drive is 98% full.",
+        "expected_checks": [
+            "Check remaining disk space",
+            "Identify largest files or folders",
+            "Avoid deleting system files blindly"
+        ]
+    },
+    {
+        "id": 2,
+        "category": "Linux",
+        "scenario": "A Linux server is reachable by ping but SSH connections are failing.",
+        "expected_checks": [
+            "Check SSH service status",
+            "Check firewall rules",
+            "Check port 22 listening"
+        ]
+    },
+    {
+        "id": 3,
+        "category": "Backup",
+        "scenario": "A nightly server backup failed and the backup agent reports it cannot communicate with the backup service.",
+        "expected_checks": [
+            "Check backup agent service",
+            "Check network connectivity",
+            "Review backup logs"
+        ]
+    },
+    {
+        "id": 4,
+        "category": "Security",
+        "scenario": "A user account generated a sign-in alert from an unfamiliar country.",
+        "expected_checks": [
+            "Review sign-in details",
+            "Validate activity with the user",
+            "Check MFA and account security"
+        ]
+    },
+    {
+        "id": 5,
+        "category": "Network",
+        "scenario": "An IPsec VPN tunnel between two sites is reported down.",
+        "expected_checks": [
+            "Verify tunnel status",
+            "Check peer connectivity",
+            "Review VPN logs and recent configuration changes"
+        ]
+    }
+]
