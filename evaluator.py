@@ -1,8 +1,21 @@
 import json
+import sqlite3
 
 from openai import OpenAI
 
 ai = OpenAI()
+
+connection = sqlite3.connect("evaluations.db")
+cursor = connection.cursor()
+
+cursor.execute("""
+CREATE TABLE IF NOT EXISTS evaluations (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    category TEXT,
+    scenario TEXT,
+    response TEXT
+)
+""")
 
 with open("scenarios.json", "r") as file:
     scenarios = json.load(file)
@@ -28,12 +41,23 @@ for item in scenarios:
 
     results.append(result)
 
+    cursor.execute("""
+    INSERT INTO evaluations (category, scenario, response)
+    VALUES (?, ?, ?)
+    """, (
+        item["category"],
+        scenario,
+        response.output_text
+    ))
+
     print("\nScenario:")
     print(scenario)
 
     print("\nAI Response:")
     print(response.output_text)
 
+connection.commit()
+connection.close()
+
 with open("evaluation_results.json", "w") as file:
     json.dump(results, file, indent=4)
-
